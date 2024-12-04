@@ -1,15 +1,15 @@
 from aiogram import Dispatcher, Bot
 from aiogram.types import BotCommand
+from data.config import token
+from guruhlar.main import group_router
+from users.main import user_router
+from guruhlar.inspection import group_router
 
-from guruhlar.main import user_router, group_router
-# Bot token
-BOT_TOKEN = "7720505731:AAHke1ybIGrc3nhCIDHo4wx0ZF4gEwSDMQM"
+BOT_TOKEN = token
 
-# Bot va Dispatcher yaratish
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
-# Routerlarni birlashtirish
 dp.include_router(user_router)
 dp.include_router(group_router)
 
